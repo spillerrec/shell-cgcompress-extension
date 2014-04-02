@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+    This propdesc file contains the descriptions of Recipe Sample custom properties.
+    To register/unregister, use the PropertySchema SDK sample, or http://www.codeplex.com/prop.
+
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://schemas.microsoft.com/windows/2006/propertydescription"
+        schemaVersion="1.0">
+  <propertyDescriptionList publisher="Spiller" product="CgCompress">
+    <propertyDescription name="Spiller.CgCompress.Animation" formatID="{57E4CA6D-8485-484A-8509-2F07D628BCB4}" propID="100">
+      <description>Indicates whether the image is animated or not</description>
+      <searchInfo inInvertedIndex="true" isColumn="true"/>
+      <typeInfo type="Boolean" multipleValues="false" isViewable="true" isQueryable="true"/>
+      <labelInfo label="Animation" />
+      <displayInfo displayType="Boolean"/>
+    </propertyDescription>
+	 
+    <propertyDescription name="Spiller.CgCompress.Pages" formatID="{5A07190B-D3AE-45B1-8B35-9D290713965D}" propID="101">
+      <description>The amount of pages/frames in the image</description>
+      <searchInfo inInvertedIndex="true" isColumn="true"/>
+      <typeInfo type="UInt32" multipleValues="false" isViewable="true" isQueryable="true"/>
+      <labelInfo label="Pages" />
+      <displayInfo displayType="Number"/>
+    </propertyDescription>
+  </propertyDescriptionList>
+</schema>

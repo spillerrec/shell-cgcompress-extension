@@ -9,6 +9,12 @@
 
 using namespace std;
 
+const PROPERTYKEY PKEY_Spiller_CgCompress_Animation =
+	{ { 0x57E4CA6D, 0x8485, 0x484A, 0x8509, 0x2F07D628BCB4 }, 100 };
+
+const PROPERTYKEY PKEY_Spiller_CgCompress_Pages =
+	{ { 0x5A07190B, 0xD3AE, 0x45B1, 0x8B35, 0x9D290713965D }, 101 };
+
 void CgCompressHandler::readMeta( string xml ) {
 	pugi::xml_document doc;
 	doc.load_buffer( xml.c_str( ), xml.size( ) );
@@ -38,4 +44,20 @@ void CgCompressHandler::readMeta( string xml ) {
 	prop_yres.dblVal = image.attribute( "yres" ).as_double( 72 );
 	prop_cache->SetValue( PKEY_Image_HorizontalResolution, prop_xres );
 	prop_cache->SetValue( PKEY_Image_VerticalResolution, prop_yres );
+
+	//Pages
+	PROPVARIANT prop_pages = { 0 };
+	prop_pages.vt = VT_UINT;
+	auto frames = doc.child( "image" ).children( "stack" );
+	prop_pages.uintVal = distance( frames.begin( ), frames.end( ) );
+	prop_cache->SetValue( PKEY_Spiller_CgCompress_Pages, prop_pages );
+
+	//Animation
+	PROPVARIANT prop_animation = { 0 };
+	prop_animation.vt = VT_BOOL;
+	prop_animation.boolVal = (image.attribute( "loops" ).as_int( 0 ) != 0);
+	prop_cache->SetValue( PKEY_Spiller_CgCompress_Animation, prop_animation );
+
+
+	//TODO: save compression settings
 }
