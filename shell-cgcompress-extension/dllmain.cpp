@@ -3,9 +3,10 @@
 #include "ClassFactory.h"
 #include <new>
 
-// {80CF1ACD-0EE8-409A-A22C-EC25BE82C647}
-static const GUID CLSID_OraHandler = 
-{ 0x80cf1acd, 0xee8, 0x409a, { 0xa2, 0x2c, 0xec, 0x25, 0xbe, 0x82, 0xc6, 0x47 } };
+// {B5E1208D-3235-44D5-ADD0-478E1A791AE1}
+static const GUID CLSID_CgCompressHandler =
+{ 0xb5e1208d, 0x3235, 0x44d5, { 0xad, 0xd0, 0x47, 0x8e, 0x1a, 0x79, 0x1a, 0xe1 } };
+
 
 
 
@@ -25,7 +26,7 @@ BOOL APIENTRY DllMain( HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReser
 HRESULT __stdcall DllGetClassObject( REFCLSID objGuid, REFIID riid, void **ppv ){
 	*ppv = NULL;
 	
-	if( IsEqualCLSID( objGuid, CLSID_OraHandler ) ){
+	if( IsEqualCLSID( objGuid, CLSID_CgCompressHandler ) ) {
 		ClassFactory *factory = new (std::nothrow) ClassFactory();
 		if( !factory )
 			return E_OUTOFMEMORY;
