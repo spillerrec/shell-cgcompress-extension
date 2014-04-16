@@ -37,6 +37,7 @@ HKEY_LOCAL_MACHINE
  |    |    |    |    |    |    |-- NameSpace
  |    |    |    |    |    |    |    |-- {B5E1208D-3235-44D5-ADD0-478E1A791AE1}
  |    |    |    |    |    |    |    |    |-- Key:REG_SZ  (Default) = cgCompress Property Handler
+ |    |    |    |    |    |
  |    |    |    |    |    |-- Shell Extensions
  |    |    |    |    |    |    |-- Approved
  |    |    |    |    |    |    |    |-- Key:REG_SZ  {B5E1208D-3235-44D5-ADD0-478E1A791AE1} = cgCompress Property Handler
