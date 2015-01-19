@@ -89,7 +89,9 @@ bool ZipHandler::read_zip( archive* file ){
 		if( xml.empty() && isMeta( filename ) )
 			xml = read_data( file );
 
-		//TODO: stop reading once both meta and thumb have been read
+		//stop reading once both meta and thumb have been read
+		if( !thumb.empty() && !xml.empty() )
+			return true;
 	}
 	
 	return true;
