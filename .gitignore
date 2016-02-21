@@ -1,7 +1,2 @@
-/*.opensdf
-/*.sdf
-/*.suo
-/ipch
+/build
 /x64
-/shell-cgcompress-extension/x64
-*.user
